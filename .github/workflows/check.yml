@@ -1,0 +1,22 @@
+name: Checked Code
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Deno
+        uses: denolib/setup-deno@v2
+        with:
+          deno-version: v1.x
+      - name: Test
+        run: deno task test
+      - name: Lint
+        run: deno lint
+      - name: Format Check
+        run: deno task fmt --check

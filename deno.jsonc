@@ -1,0 +1,7 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-net=0.0.0.0:8090 --watch mod.tsx",
+    "test": "deno test --no-check",
+    "fmt": "deno fmt --ignore=README.md"
+  }
+}
