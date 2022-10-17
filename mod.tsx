@@ -15,14 +15,15 @@ const now = new Date().toLocaleString("ja-JP");
 
 const SITE_NAME = "今、リコリコって何話だっけ？";
 const SITE_DESCRIPTION = "リコリコの最新話(？)がわかるだけのサイトです";
+const nowEpisodeNum = incrementEpisodeNum(
+  LAST_EPISODE_NUM,
+  convertElapsedDateTime(now, LAST_EPISODE_DATE, "date"),
+);
 const nowEpisodeText = getNowEpisodeText(
   now,
   convertElapsedDateTime(now, LAST_EPISODE_DATE, "date"),
   convertElapsedDateTime(now, LAST_EPISODE_DATE, "week"),
-  incrementEpisodeNum(
-    LAST_EPISODE_NUM,
-    convertElapsedDateTime(now, LAST_EPISODE_DATE, "date"),
-  ),
+  nowEpisodeNum,
 );
 
 html.use(UnoCSS());
@@ -52,7 +53,7 @@ const handler: Handler = (req) => {
           <div class="block mt-18 text-center">
             <a
               class="inline-block mx-a py-2 px-3 bg-lightblue rd c-white"
-              href={`https://twitter.com/intent/tweet?text=${nowEpisodeText}&url=%0a%0ahttps://lycoreco-now.deno.dev%0a&hashtags=今リコリコって何話だっけ`}
+              href={`https://twitter.com/intent/tweet?text=${nowEpisodeText}&url=%0a%0ahttps://lycoreco-now.deno.dev%0a&hashtags=今リコリコって何話だっけ,リコリコ${nowEpisodeNum}話`}
               target="_blank"
               rel="noreferrer noopener"
             >
