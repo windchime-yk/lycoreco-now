@@ -18,8 +18,9 @@ export const convertElapsedDateTime = (
   lastEpisodeDate: string,
   base: "week" | "date" | "hour" | "minutes" | "seconds" | "milliseconds",
 ): number => {
-  console.log({ now, lastEpisodeDate });
   const diff = new Date(now).getTime() - new Date(lastEpisodeDate).getTime();
+
+  console.log({convertNow: new Date(now)});
 
   if (base === "week") return diff / 604_800_016.56;
   if (base === "date") return diff / 86_400_000;
@@ -44,30 +45,14 @@ export const incrementEpisodeNum = (
 
 /**
  * @param now 今日の日付
- * @param elapsedDate 最終回放送日からの経過日数
  * @param episodeNum 現在の話数
  */
 export const getNowEpisodeText = (
   now: string,
-  elapsedDate: number,
-  elapsedWeek: number,
   episodeNum: number,
 ): string => {
-  const { year, month, date } = readDate({ date: now, zeropadding: true });
-  const diff = convertElapsedDateTime(
-    now,
-    `${year}/${month}/${date} 00:00:00`,
-    "hour",
-  );
-  const days = (num: number) =>
-    Math.ceil(elapsedWeek) === 0 ? num : Math.ceil(elapsedWeek) * num;
-  console.log({ now, elapsedDate, elapsedWeek, episodeNum, diff });
+  const { days } = readDate({ date: now, zeropadding: true });
 
-  if (
-    elapsedDate <= days(7) && elapsedDate > days(6) &&
-    diff <= 23.5
-  ) {
-    return `今日がリコリコ${episodeNum}話です`;
-  }
+  if (days === "土") return `今日がリコリコ${episodeNum}話です`;
   return `今はリコリコ${episodeNum}話です`;
 };

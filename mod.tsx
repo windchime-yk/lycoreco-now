@@ -13,6 +13,8 @@ import {
 
 const now = new Date().toLocaleString("ja-JP");
 
+console.log({ now, LAST_EPISODE_DATE });
+
 const SITE_NAME = "今、リコリコって何話だっけ？";
 const SITE_DESCRIPTION = "リコリコの最新話(？)がわかるだけのサイトです";
 const nowEpisodeNum = incrementEpisodeNum(
@@ -21,14 +23,12 @@ const nowEpisodeNum = incrementEpisodeNum(
 );
 const nowEpisodeText = getNowEpisodeText(
   now,
-  convertElapsedDateTime(now, LAST_EPISODE_DATE, "date"),
-  convertElapsedDateTime(now, LAST_EPISODE_DATE, "week"),
   nowEpisodeNum,
 );
 
 html.use(UnoCSS());
 
-const handler: Handler = (req) => {
+const handler: Handler = () => {
   return html({
     title: SITE_NAME,
     meta: {

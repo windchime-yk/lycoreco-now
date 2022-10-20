@@ -11,6 +11,12 @@ import {
 const JUST_ONE_DATE = "2022/09/25 23:30:00";
 /** 最終回放送日時から1日後の00:00 */
 const START_ONE_DATE = "2022/09/25 00:00:00";
+/** 最終回放送日時からキッカリ3日前 */
+const JUST_PAST_THIRD_DATE = "2022/09/28 23:30:00";
+/** 最終回放送日時からキッカリ2日前 */
+const JUST_PAST_SECOND_DATE = "2022/09/29 23:30:00";
+/** 最終回放送日時からキッカリ1日前 */
+const JUST_PAST_ONE_DATE = "2022/09/30 23:30:00";
 /** 最終回放送日時からキッカリ1週間後 */
 const JUST_ONE_WEEK = "2022/10/01 23:30:00";
 /** 最終回放送日時から1週間後の00:00 */
@@ -108,20 +114,41 @@ Deno.test("最終回放送日時からの経過日時テスト", async (t) => {
 
 Deno.test("経過日数からのテキストの出し分けテスト", async (t) => {
   const TEST_EPISODE_NUM = 14;
+
+  await t.step("経過日数がキッカリ3日前の場合", () => {
+    assertEquals<string>(
+      getNowEpisodeText(
+        JUST_PAST_THIRD_DATE,
+        TEST_EPISODE_NUM,
+      ),
+      "今はリコリコ14話です",
+    );
+  });
+
+  await t.step("経過日数がキッカリ2日前の場合", () => {
+    assertEquals<string>(
+      getNowEpisodeText(
+        JUST_PAST_SECOND_DATE,
+        TEST_EPISODE_NUM,
+      ),
+      "今はリコリコ14話です",
+    );
+  });
+
+  await t.step("経過日数がキッカリ1日前の場合", () => {
+    assertEquals<string>(
+      getNowEpisodeText(
+        JUST_PAST_ONE_DATE,
+        TEST_EPISODE_NUM,
+      ),
+      "今はリコリコ14話です",
+    );
+  });
+
   await t.step("経過日数がキッカリ1週間後の場合", () => {
     assertEquals<string>(
       getNowEpisodeText(
-        LAST_EPISODE_DATE,
-        convertElapsedDateTime(
-          JUST_ONE_WEEK,
-          LAST_EPISODE_DATE,
-          "date",
-        ),
-        convertElapsedDateTime(
-          JUST_ONE_WEEK,
-          LAST_EPISODE_DATE,
-          "week",
-        ),
+        JUST_ONE_WEEK,
         TEST_EPISODE_NUM,
       ),
       "今日がリコリコ14話です",
@@ -131,17 +158,7 @@ Deno.test("経過日数からのテキストの出し分けテスト", async (t)
   await t.step("経過日数が1週間後の00:00の場合", () => {
     assertEquals<string>(
       getNowEpisodeText(
-        LAST_EPISODE_DATE,
-        convertElapsedDateTime(
-          START_ONE_WEEK,
-          LAST_EPISODE_DATE,
-          "date",
-        ),
-        convertElapsedDateTime(
-          START_ONE_WEEK,
-          LAST_EPISODE_DATE,
-          "week",
-        ),
+        START_ONE_WEEK,
         TEST_EPISODE_NUM,
       ),
       "今日がリコリコ14話です",
@@ -151,17 +168,7 @@ Deno.test("経過日数からのテキストの出し分けテスト", async (t)
   await t.step("経過日数が1日後の場合", () => {
     assertEquals<string>(
       getNowEpisodeText(
-        LAST_EPISODE_DATE,
-        convertElapsedDateTime(
-          JUST_ONE_DATE,
-          LAST_EPISODE_DATE,
-          "date",
-        ),
-        convertElapsedDateTime(
-          JUST_ONE_DATE,
-          LAST_EPISODE_DATE,
-          "week",
-        ),
+        JUST_ONE_DATE,
         TEST_EPISODE_NUM,
       ),
       "今はリコリコ14話です",
@@ -171,17 +178,7 @@ Deno.test("経過日数からのテキストの出し分けテスト", async (t)
   await t.step("経過日数が4週間後の場合", () => {
     assertEquals<string>(
       getNowEpisodeText(
-        LAST_EPISODE_DATE,
-        convertElapsedDateTime(
-          START_FOUR_WEEK,
-          LAST_EPISODE_DATE,
-          "date",
-        ),
-        convertElapsedDateTime(
-          START_FOUR_WEEK,
-          LAST_EPISODE_DATE,
-          "week",
-        ),
+        START_FOUR_WEEK,
         TEST_EPISODE_NUM,
       ),
       "今日がリコリコ14話です",
