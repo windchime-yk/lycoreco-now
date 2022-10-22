@@ -11,22 +11,22 @@ import {
   LAST_EPISODE_NUM,
 } from "./core.ts";
 
-const now = new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
-
 const SITE_NAME = "今、リコリコって何話だっけ？";
 const SITE_DESCRIPTION = "リコリコの最新話(？)がわかるだけのサイトです";
-const nowEpisodeNum = incrementEpisodeNum(
-  LAST_EPISODE_NUM,
-  convertElapsedDateTime(now, LAST_EPISODE_DATE, "date"),
-);
-const nowEpisodeText = getNowEpisodeText(
-  now,
-  nowEpisodeNum,
-);
 
 html.use(UnoCSS());
 
 const handler: Handler = () => {
+  const now = new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
+  const nowEpisodeNum = incrementEpisodeNum(
+    LAST_EPISODE_NUM,
+    convertElapsedDateTime(now, LAST_EPISODE_DATE, "date"),
+  );
+  const nowEpisodeText = getNowEpisodeText(
+    now,
+    nowEpisodeNum,
+  );
+
   return html({
     title: SITE_NAME,
     meta: {
