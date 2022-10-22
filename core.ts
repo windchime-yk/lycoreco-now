@@ -2,8 +2,8 @@ import { readDate } from "./deps.ts";
 
 /** 最終話の話数 */
 export const LAST_EPISODE_NUM = 13;
-/** 最終話の放送日時 */
-export const LAST_EPISODE_DATE = "2022/09/24 23:30:00";
+/** 最終話の放送日 */
+export const LAST_EPISODE_DATE = "2022/09/24 00:00:00";
 /** 1週間の日数 */
 const ONE_WEEK_NUM = 7;
 
