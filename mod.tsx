@@ -11,7 +11,7 @@ import {
   LAST_EPISODE_NUM,
 } from "./core.ts";
 
-const now = new Date().toLocaleString("ja-JP");
+const now = new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
 
 console.log({ now, LAST_EPISODE_DATE });
 
