@@ -13,8 +13,6 @@ import {
 
 const now = new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
 
-console.log({ now, LAST_EPISODE_DATE });
-
 const SITE_NAME = "今、リコリコって何話だっけ？";
 const SITE_DESCRIPTION = "リコリコの最新話(？)がわかるだけのサイトです";
 const nowEpisodeNum = incrementEpisodeNum(

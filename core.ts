@@ -19,9 +19,6 @@ export const convertElapsedDateTime = (
   base: "week" | "date" | "hour" | "minutes" | "seconds" | "milliseconds",
 ): number => {
   const diff = new Date(now).getTime() - new Date(lastEpisodeDate).getTime();
-
-  console.log({convertNow: new Date(now)});
-
   if (base === "week") return diff / 604_800_016.56;
   if (base === "date") return diff / 86_400_000;
   if (base === "hour") return diff / 3_600_000;
