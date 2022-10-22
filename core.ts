@@ -2,8 +2,8 @@ import { readDate } from "./deps.ts";
 
 /** 最終話の話数 */
 export const LAST_EPISODE_NUM = 13;
-/** 最終話の放送日時 */
-export const LAST_EPISODE_DATE = "2022/09/24 23:30:00";
+/** 最終話の放送日 */
+export const LAST_EPISODE_DATE = "2022/09/24 00:00:00";
 /** 1週間の日数 */
 const ONE_WEEK_NUM = 7;
 
@@ -19,9 +19,6 @@ export const convertElapsedDateTime = (
   base: "week" | "date" | "hour" | "minutes" | "seconds" | "milliseconds",
 ): number => {
   const diff = new Date(now).getTime() - new Date(lastEpisodeDate).getTime();
-
-  console.log({convertNow: new Date(now)});
-
   if (base === "week") return diff / 604_800_016.56;
   if (base === "date") return diff / 86_400_000;
   if (base === "hour") return diff / 3_600_000;
