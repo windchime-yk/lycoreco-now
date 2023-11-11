@@ -1,0 +1,33 @@
+{
+  "version": "3",
+  "redirects": {
+    "https://pax.deno.dev/windchime-yk/deno-util@v1.6.0/text.ts": "https://raw.githubusercontent.com/windchime-yk/deno-util/v1.6.0/text.ts"
+  },
+  "remote": {
+    "https://deno.land/std@0.110.0/fmt/colors.ts": "8368ddf2d48dfe413ffd04cdbb7ae6a1009cf0dccc9c7ff1d76259d9c61a0621",
+    "https://deno.land/std@0.110.0/testing/_diff.ts": "ccd6c3af6e44c74bf1591acb1361995f5f50df64323a6e7fb3f16c8ea792c940",
+    "https://deno.land/std@0.110.0/testing/asserts.ts": "6b0d6ba564bdff807bd0f0e93e02c48aa3177acf19416bf84a7f420191ef74cd",
+    "https://deno.land/std@0.117.0/async/deadline.ts": "1d6ac7aeaee22f75eb86e4e105d6161118aad7b41ae2dd14f4cfd3bf97472b93",
+    "https://deno.land/std@0.117.0/async/debounce.ts": "b2f693e4baa16b62793fd618de6c003b63228db50ecfe3bd51fc5f6dc0bc264b",
+    "https://deno.land/std@0.117.0/async/deferred.ts": "ab60d46ba561abb3b13c0c8085d05797a384b9f182935f051dc67136817acdee",
+    "https://deno.land/std@0.117.0/async/delay.ts": "f2d8ccaa8ebc26594bd8b0989edfd8a96257a714c1dee2fb54d986e5bdd840ac",
+    "https://deno.land/std@0.117.0/async/mod.ts": "78425176fabea7bd1046ce3819fd69ce40da85c83e0f174d17e8e224a91f7d10",
+    "https://deno.land/std@0.117.0/async/mux_async_iterator.ts": "62abff3af9ff619e8f2adc96fc70d4ca020fa48a50c23c13f12d02ed2b760dbe",
+    "https://deno.land/std@0.117.0/async/pool.ts": "353ce4f91865da203a097aa6f33de8966340c91b6f4a055611c8c5d534afd12f",
+    "https://deno.land/std@0.117.0/async/tee.ts": "3e9f2ef6b36e55188de16a667c702ace4ad0cf84e3720379160e062bf27348ad",
+    "https://deno.land/std@0.117.0/http/server.ts": "83d48abb6693efdda5233fa4987596f5648611f1a1a36db266deee17c6596574",
+    "https://deno.land/x/htm@0.0.10/mod.tsx": "59e6ccfb5c1742e0b4449e6df62115b9c8dbe732a826fa0aa089f46308519e35",
+    "https://deno.land/x/htm@0.0.10/plugins.ts": "f0286e102fd5b04058c5887f1570ea465917c0f50431984e958af1782c03c38f",
+    "https://esm.sh/@unocss/core@0.41.0": "a9b1c7dd66d0187779ce2524d12e6aeca504b84e6e086fd58e078a96cdf29631",
+    "https://esm.sh/@unocss/preset-wind@0.41.0?bundle&no-check": "0187e6fe389bf5f7561ae6ebcc9ccbc696e7782972ad62b4d4b691de0929bbc6",
+    "https://esm.sh/preact-render-to-string@5.2.0?deps=preact@10.8.2": "c154c878c6b2c10b7c85e5e0783150118ef31f3e47ee1fc86455b832bce70204",
+    "https://esm.sh/preact@10.7.2": "d2442cd0bfdc57098480da7f69eb39703156c9cd258686ed64c2468bb6a04880",
+    "https://esm.sh/preact@10.8.2": "c7bf29d87e9f50cbdcc1972ae9a955c2f790384a9d19b7009f9a295d8b6c6151",
+    "https://esm.sh/stable/preact@10.7.2/deno/preact.js": "af8af6e2d9d9e04c9964d2418e013cdb78058a169d12dba4db11bb31ef40520e",
+    "https://esm.sh/stable/preact@10.8.2/deno/preact.js": "031934aaff31a664c55e6ec201d5c0b03c3084fecd958b7e2eecc90a2402fa6e",
+    "https://esm.sh/v99/@unocss/core@0.41.0/deno/core.js": "3b807622effc35709c471a7799c34f350492959da148399f31fd9c707af70532",
+    "https://esm.sh/v99/@unocss/preset-wind@0.41.0/deno/preset-wind.bundle.js": "4fc19c3459f1521b44475c895832b33bbb98ff5776849297ce621187322365fd",
+    "https://esm.sh/v99/preact-render-to-string@5.2.0/X-ZC9wcmVhY3RAMTAuOC4y/deno/preact-render-to-string.js": "9da93b0010b1009ad3e08f3acf786bbcdbde5c0cf0388a69d1df2891d70f6523",
+    "https://raw.githubusercontent.com/windchime-yk/deno-util/v1.6.0/text.ts": "14977707395643f81097d2775670a51b622aeb68a737a118ebe6765706590b7f"
+  }
+}

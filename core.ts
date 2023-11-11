@@ -1,4 +1,4 @@
-import { readDate } from "./deps.ts";
+import { readDate } from "deno-util/text";
 
 /** 最終話の話数 */
 export const LAST_EPISODE_NUM = 13;

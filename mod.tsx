@@ -2,14 +2,16 @@
  * @jsx h
  * @jsxFrag Fragment
  */
-import { Fragment, h, type Handler, html, serve, UnoCSS } from "./deps.ts";
+import { type Handler, serve } from "std/http/server";
+import { Fragment, h, html } from "htm";
+import { UnoCSS } from "htm/plugins";
 import {
   convertElapsedDateTime,
   getNowEpisodeText,
   incrementEpisodeNum,
   LAST_EPISODE_DATE,
   LAST_EPISODE_NUM,
-} from "./core.ts";
+} from "~/core.ts";
 
 const SITE_NAME = "今、リコリコって何話だっけ？";
 const SITE_DESCRIPTION = "リコリコの最新話(？)がわかるだけのサイトです";
