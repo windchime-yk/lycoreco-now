@@ -1,7 +1,15 @@
 {
   "tasks": {
-    "dev": "deno run --allow-net=0.0.0.0:8090 --watch mod.tsx",
-    "test": "deno test --no-check",
-    "fmt": "deno fmt --ignore=README.md"
+    "dev": "deno run --allow-net=0.0.0.0:8090 --watch mod.tsx"
+  },
+  "fmt": {
+    "exclude": ["README.md"]
+  },
+  "imports": {
+    "~/": "./",
+    "std/asserts": "https://deno.land/std@0.206.0/assert/mod.ts",
+    "htm": "https://deno.land/x/htm@0.2.1/mod.ts",
+    "htm/plugins/unocss": "https://deno.land/x/htm@0.2.1/plugins/unocss.ts",
+    "deno-util/text": "https://pax.deno.dev/windchime-yk/deno-util@v1.6.3/text.ts"
   }
 }

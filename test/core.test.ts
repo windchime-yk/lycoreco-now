@@ -1,11 +1,11 @@
-import { assertEquals } from "../deps.ts";
+import { assertEquals } from "std/asserts";
 import {
   convertElapsedDateTime,
   getNowEpisodeText,
   incrementEpisodeNum,
   LAST_EPISODE_DATE,
   LAST_EPISODE_NUM,
-} from "../core.ts";
+} from "~/core.ts";
 
 /** 最終回放送日時からキッカリ1日後 */
 const JUST_ONE_DATE = "2022/09/25 23:30:00";

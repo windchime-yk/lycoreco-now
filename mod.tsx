@@ -2,21 +2,22 @@
  * @jsx h
  * @jsxFrag Fragment
  */
-import { Fragment, h, type Handler, html, serve, UnoCSS } from "./deps.ts";
+import html, { Fragment, h } from "htm";
+import UnoCSS from "htm/plugins/unocss";
 import {
   convertElapsedDateTime,
   getNowEpisodeText,
   incrementEpisodeNum,
   LAST_EPISODE_DATE,
   LAST_EPISODE_NUM,
-} from "./core.ts";
+} from "~/core.ts";
 
 const SITE_NAME = "今、リコリコって何話だっけ？";
 const SITE_DESCRIPTION = "リコリコの最新話(？)がわかるだけのサイトです";
 
 html.use(UnoCSS());
 
-const handler: Handler = () => {
+const handler: Deno.ServeHandler = () => {
   const now = new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
   const nowEpisodeNum = incrementEpisodeNum(
     LAST_EPISODE_NUM,
@@ -64,6 +65,4 @@ const handler: Handler = () => {
   });
 };
 
-const ADDR = ":8090";
-serve(handler, { addr: ADDR });
-console.log(`listen to http://localhost${ADDR}`);
+Deno.serve({ port: 8090 }, handler);

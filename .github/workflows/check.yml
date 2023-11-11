@@ -9,14 +9,14 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Setup Deno
-        uses: denolib/setup-deno@v2
+        uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x
       - name: Test
-        run: deno task test
+        run: deno test
       - name: Lint
         run: deno lint
       - name: Format Check
-        run: deno task fmt --check
+        run: deno fmt --check
