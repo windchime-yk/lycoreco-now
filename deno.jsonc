@@ -7,9 +7,9 @@
   },
   "imports": {
     "~/": "./",
-    "std/testing/asserts": "https://deno.land/std@0.110.0/testing/asserts.ts",
-    "htm": "https://deno.land/x/htm@0.0.10/mod.tsx",
-    "htm/plugins": "https://deno.land/x/htm@0.0.10/plugins.ts",
-    "deno-util/text": "https://pax.deno.dev/windchime-yk/deno-util@v1.6.0/text.ts"
+    "std/asserts": "https://deno.land/std@0.206.0/assert/mod.ts",
+    "htm": "https://deno.land/x/htm@0.2.1/mod.ts",
+    "htm/plugins/unocss": "https://deno.land/x/htm@0.2.1/plugins/unocss.ts",
+    "deno-util/text": "https://pax.deno.dev/windchime-yk/deno-util@v1.6.3/text.ts"
   }
 }

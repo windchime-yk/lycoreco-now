@@ -2,8 +2,8 @@
  * @jsx h
  * @jsxFrag Fragment
  */
-import { Fragment, h, html } from "htm";
-import { UnoCSS } from "htm/plugins";
+import html, { Fragment, h } from "htm";
+import UnoCSS from "htm/plugins/unocss";
 import {
   convertElapsedDateTime,
   getNowEpisodeText,
