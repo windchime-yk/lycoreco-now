@@ -7,7 +7,6 @@
   },
   "imports": {
     "~/": "./",
-    "std/http/server": "https://deno.land/std@0.117.0/http/server.ts",
     "std/testing/asserts": "https://deno.land/std@0.110.0/testing/asserts.ts",
     "htm": "https://deno.land/x/htm@0.0.10/mod.tsx",
     "htm/plugins": "https://deno.land/x/htm@0.0.10/plugins.ts",

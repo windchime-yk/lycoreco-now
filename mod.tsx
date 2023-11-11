@@ -2,7 +2,6 @@
  * @jsx h
  * @jsxFrag Fragment
  */
-import { type Handler, serve } from "std/http/server";
 import { Fragment, h, html } from "htm";
 import { UnoCSS } from "htm/plugins";
 import {
@@ -18,7 +17,7 @@ const SITE_DESCRIPTION = "リコリコの最新話(？)がわかるだけのサ�
 
 html.use(UnoCSS());
 
-const handler: Handler = () => {
+const handler: Deno.ServeHandler = () => {
   const now = new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
   const nowEpisodeNum = incrementEpisodeNum(
     LAST_EPISODE_NUM,
@@ -66,6 +65,4 @@ const handler: Handler = () => {
   });
 };
 
-const ADDR = ":8090";
-serve(handler, { addr: ADDR });
-console.log(`listen to http://localhost${ADDR}`);
+Deno.serve({ port: 8090 }, handler);
