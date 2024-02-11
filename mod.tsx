@@ -59,16 +59,6 @@ const handler: Deno.ServeHandler = () => {
               ツイートする
             </a>
           </div>
-          <p class="mt-18 text-center">
-            <a
-              class="underline c-blue"
-              href="https://twitter.com/lycoris_recoil/status/1624369212251844608"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              新作アニメーション制作決定
-            </a>、おめでとうございます！🎉🎉🎉
-          </p>
         </main>
       </>
     ),
