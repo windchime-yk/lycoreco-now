@@ -14,7 +14,7 @@ import {
   mainStyle,
   nowEpisodeTextStyle,
   titleStyle,
-} from "~/main.css.ts";
+} from "~/mod.css.ts";
 
 const SITE_NAME = "今、リコリコって何話だっけ？";
 const SITE_DESCRIPTION = "リコリコの最新話(？)がわかるだけのサイトです";
