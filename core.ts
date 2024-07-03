@@ -1,4 +1,4 @@
-import { readDate } from "deno-util/text";
+import { readDate } from "@whyk/utils/text";
 
 /** 最終話の話数 */
 export const LAST_EPISODE_NUM = 13;
