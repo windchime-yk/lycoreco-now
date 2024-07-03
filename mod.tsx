@@ -1,9 +1,5 @@
-/**
- * @jsx h
- * @jsxFrag Fragment
- */
-import html, { Fragment, h } from "htm";
-import UnoCSS from "htm/plugins/unocss";
+import { Hono } from "@hono/hono";
+import { Style } from "@hono/hono/css";
 import {
   convertElapsedDateTime,
   getNowEpisodeText,
@@ -11,13 +7,21 @@ import {
   LAST_EPISODE_DATE,
   LAST_EPISODE_NUM,
 } from "~/core.ts";
+import {
+  buttonStyle,
+  buttonWrapperStyle,
+  headerStyle,
+  mainStyle,
+  nowEpisodeTextStyle,
+  titleStyle,
+} from "~/mod.css.ts";
 
 const SITE_NAME = "今、リコリコって何話だっけ？";
 const SITE_DESCRIPTION = "リコリコの最新話(？)がわかるだけのサイトです";
 
-html.use(UnoCSS());
+const app = new Hono();
 
-const handler: Deno.ServeHandler = () => {
+app.get("/", (c) => {
   const now = new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
   const nowEpisodeNum = incrementEpisodeNum(
     LAST_EPISODE_NUM,
@@ -28,30 +32,27 @@ const handler: Deno.ServeHandler = () => {
     nowEpisodeNum,
   );
 
-  return html({
-    title: SITE_NAME,
-    meta: {
-      descrition: SITE_DESCRIPTION,
-    },
-    status: 200,
-    styles: [
-      `
-      * {
-        box-sizing: border-box
-      }
-      `,
-    ],
-    lang: "ja",
-    body: (
-      <>
-        <header class="py-9">
-          <h1 class="text-4xl font-bold text-center">{SITE_NAME}</h1>
+  return c.html(
+    <html>
+      <head>
+        <title>{SITE_NAME}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="descrition" content={SITE_DESCRIPTION} />
+        <link
+          href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+          rel="stylesheet"
+        />
+        <Style />
+      </head>
+      <body>
+        <header class={headerStyle}>
+          <h1 class={titleStyle}>{SITE_NAME}</h1>
         </header>
-        <main class="mt-9">
-          <p class="text-6xl font-bold text-center">{nowEpisodeText}</p>
-          <div class="block mt-18 text-center">
+        <main class={mainStyle}>
+          <p class={nowEpisodeTextStyle}>{nowEpisodeText}</p>
+          <div class={buttonWrapperStyle}>
             <a
-              class="inline-block mx-a py-2 px-3 bg-lightblue rd c-white"
+              class={buttonStyle}
               href={`https://twitter.com/intent/tweet?text=${nowEpisodeText}&url=%0a%0ahttps://lycoreco-now.deno.dev%0a&hashtags=今リコリコって何話だっけ,リコリコ${nowEpisodeNum}話`}
               target="_blank"
               rel="noreferrer noopener"
@@ -60,9 +61,9 @@ const handler: Deno.ServeHandler = () => {
             </a>
           </div>
         </main>
-      </>
-    ),
-  });
-};
+      </body>
+    </html>,
+  );
+});
 
-Deno.serve({ port: 8090 }, handler);
+Deno.serve({ port: 8090 }, app.fetch);

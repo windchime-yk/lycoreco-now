@@ -1,17 +1,25 @@
 {
   "version": "3",
-  "redirects": {
-    "https://pax.deno.dev/windchime-yk/deno-util@v1.6.3/text.ts": "https://raw.githubusercontent.com/windchime-yk/deno-util/v1.6.3/text.ts"
+  "packages": {
+    "specifiers": {
+      "jsr:@hono/hono@^4.4.10": "jsr:@hono/hono@4.4.10",
+      "jsr:@whyk/utils@^1.7.0": "jsr:@whyk/utils@1.7.0"
+    },
+    "jsr": {
+      "@hono/hono@4.4.10": {
+        "integrity": "410ae169532581e8fd34e473d41b989cc7cf81d01ab274ca6b49f8a6acd920ad"
+      },
+      "@whyk/utils@1.7.0": {
+        "integrity": "47793b6fb5826d8a298fba68acf47419bb19f11ac6421d967077ae65dc56d45d"
+      }
+    }
   },
-  "remote": {
-    "https://deno.land/x/htm@0.2.1/html.tsx": "afcf0500d9199e8efe6877d9e7bf4f7907d0bba09906b6036cfe5e90458083b3",
-    "https://deno.land/x/htm@0.2.1/jsx.ts": "2dfbc2b208981b9348aee02494ba064eac72f686d2e5ecc19d7f3fcdb9734e3d",
-    "https://deno.land/x/htm@0.2.1/mod.ts": "d930056a7c8c645bea5f9c116d65bc309d12cfebafa8db98f7c406e1984caaec",
-    "https://deno.land/x/htm@0.2.1/plugins/unocss.ts": "a81d25bb4ac02fa7ff13be010c4d90984e2f8f27116866e28b05338f66501500",
-    "https://esm.sh/@unocss/core@0.51.2": "891b83e276834a9f6d3fb58ffa734cf1eb63fe3100d5465eb3f4bc9575f071d4",
-    "https://esm.sh/@unocss/preset-wind@0.51.2?bundle&no-dts": "2018c4a81e28d88544036623ecada45d8fb0e78158f7b0ec053d961954002b0e",
-    "https://esm.sh/v133/@unocss/core@0.51.2/denonext/core.mjs": "299ce5516e9ace98db8e53783a3ac550a222dba6efbd6a61ebd8fff5da542574",
-    "https://esm.sh/v133/@unocss/preset-wind@0.51.2/denonext/preset-wind.bundle.mjs": "83469ffd57d86fbd06f5140b4738d191a0216d2ea15f68fd87caae5ee27dc363",
-    "https://raw.githubusercontent.com/windchime-yk/deno-util/v1.6.3/text.ts": "14977707395643f81097d2775670a51b622aeb68a737a118ebe6765706590b7f"
+  "remote": {},
+  "workspace": {
+    "dependencies": [
+      "jsr:@hono/hono@^4.4.10",
+      "jsr:@std/assert@^0.226.0",
+      "jsr:@whyk/utils@^1.7.0"
+    ]
   }
 }

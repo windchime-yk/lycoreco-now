@@ -1,4 +1,4 @@
-import { assertEquals } from "std/asserts";
+import { assertEquals } from "@std/assert";
 import {
   convertElapsedDateTime,
   getNowEpisodeText,
