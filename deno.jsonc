@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "dev": "deno run --allow-net=0.0.0.0:8090 --watch main.tsx"
+    "dev": "deno run -N=0.0.0.0:8090 -R --watch mod.tsx"
   },
   "fmt": {
     "exclude": ["README.md"]
